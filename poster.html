@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عد واصنعني - فعالية روحية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #1e88e5 0%, #FFB347 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 10px;
+        }
+        
+        .poster {
+            width: 100%;
+            max-width: 850px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+            overflow: hidden;
+            position: relative;
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @media (min-width: 768px) {
+            .poster {
+                border-radius: 40px;
+            }
+            body {
+                padding: 20px;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e88e5 0%, #42a5f5 50%, #87CEEB 100%);
+            padding: 30px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @media (min-width: 768px) {
+            .header {
+                padding: 50px 40px 80px;
+            }
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -10%;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(255,179,71,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 3s ease-in-out infinite 1.5s;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        .decorative-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        
+        .shape {
+            position: absolute;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+        }
+        
+        .shape-1 { width: 80px; height: 80px; top: 20px; right: 50px; animation: float 4s ease-in-out infinite; }
+        .shape-2 { width: 60px; height: 60px; top: 60px; left: 80px; animation: float 5s ease-in-out infinite 1s; }
+        .shape-3 { width: 40px; height: 40px; bottom: 30px; right: 100px; animation: float 3s ease-in-out infinite 0.5s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            padding: 100px 20px 30px;
+            background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+            position: relative;
+        }
+        
+        @media (min-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                padding: 120px 40px 40px;
+            }
+        }
+        
+        .center-pot {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @media (min-width: 768px) {
+            .center-pot {
+                top: -80px;
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0px); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+        
+        .pottery-container {
+            width: 160px;
+            height: 160px;
+            background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2), 0 0 0 8px #FFB347, 0 0 0 12px rgba(255,179,71,0.3);
+            position: relative;
+        }
+        
+        @media (min-width: 768px) {
+            .pottery-container {
+                width: 220px;
+                height: 220px;
+                box-shadow: 0 20px 50px rgba(0,0,0,0.2), 0 0 0 10px #FFB347, 0 0 0 15px rgba(255,179,71,0.3);
+            }
+        }
+        
+        .pottery-container::before {
+            content: '✨';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 28px;
+            animation: sparkle 1.5s ease-in-out infinite;
+        }
+        
+        .pottery-container::after {
+            content: '💫';
+            position: absolute;
+            bottom: -8px;
+            left: -8px;
+            font-size: 25px;
+            animation: sparkle 1.5s ease-in-out infinite 0.7s;
+        }
+        
+        @media (min-width: 768px) {
+            .pottery-container::before {
+                top: -15px;
+                right: -15px;
+                font-size: 40px;
+            }
+            
+            .pottery-container::after {
+                bottom: -10px;
+                left: -10px;
+                font-size: 35px;
+            }
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 0.7; }
+        }
+        
+        .pottery {
+            width: 100px;
+            height: 120px;
+            position: relative;
+        }
+        
+        @media (min-width: 768px) {
+            .pottery {
+                width: 130px;
+                height: 150px;
+            }
+        }
+        
+        .pot-body {
+            width: 100%;
+            height: 110px;
+            background: linear-gradient(135deg, #D2691E 0%, #CD853F 50%, #A0522D 100%);
+            border-radius: 50% 50% 45% 45%;
+            position: relative;
+            box-shadow: inset 0 -8px 15px rgba(0,0,0,0.3), inset 0 5px 10px rgba(255,255,255,0.2);
+        }
+        
+        .pot-top {
+            width: 85%;
+            height: 25px;
+            background: linear-gradient(180deg, #8B4513 0%, #A0522D 100%);
+            border-radius: 12px 12px 0 0;
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+        
+        .pot-rim {
+            width: 95%;
+            height: 18px;
+            background: linear-gradient(180deg, #CD853F 0%, #A0522D 100%);
+            border-radius: 50%;
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        
+        .pot-shine {
+            position: absolute;
+            top: 30%;
+            right: 20%;
+            width: 30px;
+            height: 40px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 100%);
+            border-radius: 50%;
+            transform: rotate(-20deg);
+        }
+        
+        .face {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+        }
+        
+        .eyes {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            animation: blink 4s ease-in-out infinite;
+        }
+        
+        @keyframes blink {
+            0%, 96%, 100% { transform: scaleY(1); }
+            98% { transform: scaleY(0.1); }
+        }
+        
+        .eye {
+            width: 14px;
+            height: 14px;
+            background: #2c2c2c;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .eye::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            width: 5px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+        }
+        
+        .smile {
+            width: 40px;
+            height: 22px;
+            border: 4px solid #2c2c2c;
+            border-top: none;
+            border-radius: 0 0 40px 40px;
+            margin: 0 auto;
+        }
+        
+        .left-section {
+            animation: slideInRight 0.8s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .left-section h1 {
+            font-size: 42px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FF8C42 0%, #FFB347 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: -1px;
+        }
+        
+        @media (min-width: 768px) {
+            .left-section h1 {
+                font-size: 56px;
+            }
+        }
+        
+        .left-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e88e5;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        @media (min-width: 768px) {
+            .left-section h2 {
+                font-size: 36px;
+                margin-bottom: 25px;
+            }
+        }
+        
+        .left-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #FFB347 0%, transparent 100%);
+            border-radius: 2px;
+        }
+        
+        .left-section > p {
+            font-size: 17px;
+            color: #424242;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        @media (min-width: 768px) {
+            .left-section > p {
+                font-size: 20px;
+                line-height: 1.9;
+                margin-bottom: 25px;
+            }
+        }
+        
+        .verse {
+            background: linear-gradient(135deg, #1e88e5 0%, #42a5f5 100%);
+            padding: 20px;
+            border-radius: 15px;
+            color: white;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(30, 136, 229, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @media (min-width: 768px) {
+            .verse {
+                padding: 25px;
+                border-radius: 20px;
+                font-size: 17px;
+                line-height: 2;
+                margin-bottom: 25px;
+            }
+        }
+        
+        .verse::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            font-size: 80px;
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+        
+        .price-box {
+            background: linear-gradient(135deg, #FF8C42 0%, #FFB347 100%);
+            padding: 20px;
+            border-radius: 15px;
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 140, 66, 0.4);
+            position: relative;
+            overflow: hidden;
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        @media (min-width: 768px) {
+            .price-box {
+                padding: 25px;
+                border-radius: 20px;
+                font-size: 24px;
+            }
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 10px 30px rgba(255, 140, 66, 0.4); }
+            50% { box-shadow: 0 10px 40px rgba(255, 140, 66, 0.6), 0 0 20px rgba(255, 140, 66, 0.3); }
+        }
+        
+        .price-box::before {
+            content: '🎉';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 30px;
+        }
+        
+        .right-section {
+            animation: slideInLeft 0.8s ease-out 0.2s backwards;
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .right-section h3 {
+            font-size: 26px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #1e88e5 0%, #42a5f5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        @media (min-width: 768px) {
+            .right-section h3 {
+                font-size: 32px;
+                margin-bottom: 25px;
+            }
+        }
+        
+        .right-section h3::before {
+            content: '📋';
+            position: absolute;
+            right: -35px;
+            font-size: 24px;
+        }
+        
+        @media (min-width: 768px) {
+            .right-section h3::before {
+                right: -40px;
+                font-size: 28px;
+            }
+        }
+        
+        .schedule {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 2px solid #f5f5f5;
+        }
+        
+        @media (min-width: 768px) {
+            .schedule {
+                border-radius: 20px;
+                border: 3px solid #f5f5f5;
+            }
+        }
+        
+        .schedule-row {
+            display: grid;
+            grid-template-columns: 42% 58%;
+            transition: all 0.3s ease;
+        }
+        
+        @media (max-width: 767px) {
+            .schedule-row {
+                grid-template-columns: 40% 60%;
+            }
+        }
+        
+        .schedule-row:not(.header-row):hover {
+            background: #fff8f0 !important;
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(255, 140, 66, 0.2);
+        }
+        
+        .schedule-row.header-row {
+            background: linear-gradient(135deg, #1e88e5 0%, #42a5f5 100%);
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        
+        @media (min-width: 768px) {
+            .schedule-row.header-row {
+                font-size: 18px;
+            }
+        }
+        
+        .schedule-cell {
+            padding: 14px 12px;
+            font-size: 14px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        @media (min-width: 768px) {
+            .schedule-cell {
+                padding: 18px 16px;
+                font-size: 16px;
+            }
+        }
+        
+        .schedule-row:last-child .schedule-cell {
+            border-bottom: none;
+        }
+        
+        .schedule-row:not(.header-row):nth-child(even) {
+            background: #fafafa;
+        }
+        
+        .time-cell {
+            color: #FF8C42;
+            font-weight: 700;
+            border-left: 4px solid #FFB347;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .time-cell::before {
+            content: '🕐';
+            font-size: 16px;
+        }
+        
+        @media (min-width: 768px) {
+            .time-cell::before {
+                font-size: 18px;
+            }
+        }
+        
+        .schedule-row.header-row .time-cell {
+            color: white;
+            border-left: 4px solid white;
+        }
+        
+        .schedule-row.header-row .time-cell::before {
+            content: '⏰';
+        }
+        
+        .activity-cell {
+            font-weight: 500;
+            color: #424242;
+        }
+        
+        .schedule-row.header-row .activity-cell {
+            color: white;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #FF8C42 0%, #FFB347 50%, #FF8C42 100%);
+            padding: 25px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @media (min-width: 768px) {
+            .footer {
+                padding: 35px 40px;
+            }
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shine 3s ease-in-out infinite;
+        }
+        
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .footer h2 {
+            font-size: 20px;
+            font-weight: 900;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        @media (min-width: 768px) {
+            .footer h2 {
+                font-size: 28px;
+                line-height: 1.7;
+            }
+        }
+        
+        .footer-icons {
+            margin-top: 12px;
+            font-size: 26px;
+            letter-spacing: 8px;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-icons {
+                margin-top: 15px;
+                font-size: 32px;
+                letter-spacing: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <div class="header">
+            <div class="decorative-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        
+        <div class="center-pot">
+            <div class="pottery-container">
+                <div class="pottery">
+                    <div class="pot-top"></div>
+                    <div class="pot-rim"></div>
+                    <div class="pot-body">
+                        <div class="pot-shine"></div>
+                        <div class="face">
+                            <div class="eyes">
+                                <div class="eye"></div>
+                                <div class="eye"></div>
+                            </div>
+                            <div class="smile"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="left-section">
+                <h1>عد واصنعني</h1>
+                <h2>اصنع نفسك</h2>
+                <p>تخيل نفسك خزفة جديدة في يد الفخاري الأعظم!</p>
+                
+                <div class="verse">
+                    الأشياء العتيقة قد مضت، هوذا الكل قد صار جديدًا. (2 كو 17:5)
+                </div>
+                
+                <div class="price-box">
+                    الرسوم: ٥٠ جنيه بس!<br>(وده شامل كل حاجة!)
+                </div>
+            </div>
+            
+            <div class="right-section">
+                <h3>برنامج اليوم</h3>
+                <div class="schedule">
+                    <div class="schedule-row header-row">
+                        <div class="schedule-cell time-cell">الوقت</div>
+                        <div class="schedule-cell activity-cell">الفعالية</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-cell time-cell">11:00 - 12:00 م</div>
+                        <div class="schedule-cell activity-cell">مشوار وصول ونتجمع</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-cell time-cell">12:30 - 1:30 م</div>
+                        <div class="schedule-cell activity-cell">صلاة وموضوع روحي</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-cell time-cell">1:30 - 3:00 م</div>
+                        <div class="schedule-cell activity-cell">ألعاب ومرح</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-cell time-cell">3:00 - 4:00 م</div>
+                        <div class="schedule-cell activity-cell">وجبة الغداء</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-row">
+                        <div class="schedule-cell time-cell">4:00 - 5:00 م</div>
+                        <div class="schedule-cell activity-cell">ورشة العمل اليدوي</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-cell time-cell">5:00 - 5:30 م</div>
+                        <div class="schedule-cell activity-cell">فقرة المفاجأة</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="schedule-cell time-cell">5:30 - 6:00 م</div>
+                        <div class="schedule-cell activity-cell">تصوير وتجهيز للرجوع</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h2>استثمر الـ٥٠ جنيه صح! يوم كله تجديد روحي وضحك وأصحاب جداد!</h2>
+            <div class="footer-icons">🎨 ✝️ 🎉</div>
+        </div>
+    </div>
+</body>
+</html>
